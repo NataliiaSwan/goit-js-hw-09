@@ -1,2 +1,2 @@
-import"./assets/styles-3c4e11fa.js";console.log("Form");
+import"./assets/styles-9a38a41d.js";const s="feedback-form-state",a=document.querySelector(".feedback-form");let e=JSON.parse(localStorage.getItem("STORAGE_KEY"))||{};const{email:o,message:l}=a.elements;r();function r(){e&&(o.value=e.email||"",l.value=e.message||"")}a.addEventListener("input",m);a.addEventListener("submit",i);function m(t){const n={email:o.value,message:l.value};localStorage.setItem(s,JSON.stringify(n))}function i(t){t.preventDefault(),console.log("All form fields must be filled in:",{email:o.value,message:l.value}),localStorage.removeItem(s),t.currentTarget.reset(),e={}}
 //# sourceMappingURL=commonHelpers2.js.map
