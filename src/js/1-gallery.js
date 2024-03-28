@@ -2,12 +2,6 @@ import SimpleLightbox from 'simplelightbox';
 
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const lightbox = new SimpleLightbox('.gallery a', {
-  /* options */
-});
-
-console.log(SimpleLightbox);
-
 const images = [
   {
     preview:
@@ -94,18 +88,8 @@ function createMarkup(arr) {
     )
     .join('');
 }
-function onImageClick(event) {
-  event.preventDefault();
-  if (event.target.nodeName !== 'IMG') {
-    return;
-  }
-}
 const lighbox = new SimpleLightbox('.gallery-item a', {
   captionsData: 'alt',
   captionDelay: 250,
   captionPosition: 'outside',
-});
-lighbox.on('shown.simplelightbox', () => {
-  const overlay = document.querySelector('.sl-overlay');
-  overlay.style.backgroundColor = 'rgba(46, 47, 66, 0.8)';
 });
