@@ -2,7 +2,7 @@ const STORAGE_KEY = 'feedback-form-state';
 
 const form = document.querySelector('.feedback-form');
 
-let storageData = JSON.parse(localStorage.getItem('STORAGE_KEY')) || {};
+let storageData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
 const { email, message } = form.elements;
 reloadPage();
 
@@ -19,7 +19,7 @@ function onFormInput(event) {
   //
   const formElements = event.currentTarget.elements;
   const email = formElements.email.value.trim();
-  const message = formElements.email.value.trim();
+  const message = formElements.message.value.trim();
   const formData = { email, message };
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(storageData));
@@ -29,7 +29,7 @@ function onFormSumbit(event) {
   const formElements = event.currentTarget.elements;
   const email = formElements.email.value.trim();
   const message = formElements.message.value.trim();
-  if (email === ' ' || message === ' ') {
+  if (email === '' || message === '') {
     console.log('All form fields must be filled in:');
   } else {
     const formData = { email, message };
