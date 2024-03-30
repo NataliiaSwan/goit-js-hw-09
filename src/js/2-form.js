@@ -16,13 +16,13 @@ form.addEventListener('input', onFormInput);
 form.addEventListener('submit', onFormSumbit);
 
 function onFormInput(event) {
-  //
+  
   const formElements = event.currentTarget.elements;
   const email = formElements.email.value.trim();
   const message = formElements.message.value.trim();
   const formData = { email, message };
 
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(storageData));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 function onFormSumbit(event) {
   event.preventDefault();
